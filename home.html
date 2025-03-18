@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Cooling Solution Appliance Services | Professional Repair Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2A3950;
+            --secondary: #00A3E1;
+            --accent: #FF6B6B;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--primary);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(42,57,80,0.8), rgba(42,57,80,0.8)),
+                        url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: var(--secondary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .hero-slides {
+            position: relative;
+            height: 100%;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            animation: slideShow 20s infinite;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(42,57,80,0.8), rgba(42,57,80,0.8));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        @keyframes slideShow {
+            0%, 100% { opacity: 0; }
+            5%, 25% { opacity: 1; }
+            30% { opacity: 0; }
+        }
+
+        .hero-slide:nth-child(1) { animation-delay: 0s; background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a'); }
+        .hero-slide:nth-child(2) { animation-delay: 5s; background-image: url('https://images.unsplash.com/photo-1583305727415-a8b5d0d14f39'); }
+        .hero-slide:nth-child(3) { animation-delay: 10s; background-image: url('https://images.unsplash.com/photo-1556909190-eccf4a8bf97a'); }
+        .hero-slide:nth-child(4) { animation-delay: 15s; background-image: url('https://images.unsplash.com/photo-1588854337236-6889d631faa1'); }
+
+        /* Updated Services Grid */
+        .services-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .cta-button:hover {
+            background: #008CBA;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 5%;
+            background: #f9f9f9;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 5%;
+            background: var(--primary);
+            color: white;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        textarea {
+            height: 150px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a2533;
+            color: white;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+
+
+        .about {
+        padding: 5rem 5%;
+        background: white;
+    }
+
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .about-text h2 {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+    }
+
+    .about-text p {
+        margin-bottom: 1.5rem;
+        color: #555;
+    }
+
+    .about-image img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .about-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .feature-card {
+        text-align: center;
+        padding: 1.5rem;
+        background: #f9f9f9;
+        border-radius: 10px;
+        transition: transform 0.3s;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .feature-card i {
+        font-size: 2rem;
+        color: var(--secondary);
+        margin-bottom: 1rem;
+    }
+
+
+
+    .pricing {
+        padding: 5rem 5%;
+        background: #f9f9f9;
+    }
+
+    .plans-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .plan-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
+        position: relative;
+    }
+
+    .plan-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .plan-card.recommended {
+        border: 2px solid var(--secondary);
+        transform: scale(1.05);
+    }
+
+    .plan-price {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin: 1rem 0;
+    }
+
+    .plan-price span {
+        font-size: 1.2rem;
+        color: #666;
+    }
+
+    .plan-features {
+        list-style: none;
+        margin: 2rem 0;
+        text-align: left;
+    }
+
+    .plan-features li {
+        margin-bottom: 0.8rem;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .plan-features li:before {
+        content: "\f00c";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        color: var(--secondary);
+    }
+
+    /* Ratings Section */
+    .ratings {
+        padding: 5rem 5%;
+        background: white;
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .testimonial-card {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        position: relative;
+    }
+
+    .testimonial-card:before {
+        content: "\f10d";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: var(--secondary);
+        opacity: 0.3;
+        font-size: 2rem;
+    }
+
+    .rating-stars {
+        color: #ffd700;
+        margin-bottom: 1rem;
+    }
+
+    .client-info {
+        display: flex;
+        align-items: center;
+        margin-top: 1.5rem;
+    }
+
+    .client-photo {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 1rem;
+    }
+
+    .social-buttons {
+        position: fixed;
+        right: 0px;
+        top: 50vh;
+        display: inline-flex;
+        /* justify-content: center; */
+        gap: 10px;
+        flex-direction: column;
+        margin-top: 2rem;
+    }
+    .social-buttons a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .social-buttons .phone{
+        background-color: #00A3E1;
+    }
+    .social-buttons .whatsapp{
+        background-color: green;
+        font-size : 1.5rem;
+        font-weight: bolder;
+    }
+
+
+
+
+
+
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            .about-image {
+            order: -1;
+        }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">Prime Cooling Solution</a>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-slides">
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h1>24/7 Emergency Repair Services</h1>
+                    <p>Immediate response for all your appliance emergencies</p>
+                    <a href="#contact" class="cta-button">Call Now: 6376497078</a>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h1>Professional Installation Services</h1>
+                    <p>Expert installation for all home appliances</p>
+                    <a href="#contact" class="cta-button">Schedule Installation</a>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h1>Maintenance Contracts Available</h1>
+                    <p>Annual maintenance plans to keep your appliances running smoothly</p>
+                    <a href="#contact" class="cta-button">Get Maintenance Plan</a>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h1>Authorized Service Center</h1>
+                    <p>Genuine parts and manufacturer-trained technicians</p>
+                    <a href="#contact" class="cta-button">Book Service</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class = 'social-buttons'>
+        <a href="https://wa.me/6376497078" terget="blank" class="social-button whatsapp"><i class="fab fa-whatsapp whatsapp"></i></a>
+        <a href="tel:6376497078" class="social-button phone"><i class="fas fa-phone-alt phone"></i></a>
+    </section>
+
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Prime Cooling Solution Services</h2>
+                    <p>With over 15 years of experience in appliance repair and maintenance, Prime Cooling Solution has become the trusted name in home service solutions. Our certified technicians deliver professional, reliable, and affordable services across the city.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-card">
+                            <i class="fas fa-award"></i>
+                            <h4>Certified Technicians</h4>
+                            <p>Fully trained and background-checked professionals</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-clock"></i>
+                            <h4>24/7 Availability</h4>
+                            <p>Emergency services available round the clock</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Warranty Protected</h4>
+                            <p>90-day service warranty on all repairs</p>
+                        </div>
+                    </div>
+    
+                    <p>We pride ourselves on our commitment to quality service and customer satisfaction. Our mobile units are fully equipped to handle any repair need, right at your doorstep.</p>
+                    <a href="#contact" class="cta-button">Learn More</a>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://media.gettyimages.com/id/1308375294/photo/technician-repairing-air-conditioner.jpg?s=612x612&w=0&k=20&c=BZIkJ9qarD6s94uWQauL4q88Ft65kp7xENsUBMrIfjU=" alt="Our Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="services" id="services">
+        <h2 class="section-title">Our Comprehensive Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-air-conditioner"></i>
+                <h3>AC Services</h3>
+                <p>Installation, Repair, Maintenance & Gas Filling</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-blender"></i>
+                <h3>Refrigerator Services</h3>
+                <p>Repair, Installation & Maintenance</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-fan"></i>
+                <h3>Cooler Services</h3>
+                <p>Installation, Repair & Seasonal Maintenance</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-water"></i>
+                <h3>Geyser Services</h3>
+                <p>Installation, Repair & Descaling</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-camera"></i>
+                <h3>CCTV Installation</h3>
+                <p>Home & Commercial Security Systems</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-fire"></i>
+                <h3>Chimney Services</h3>
+                <p>Installation, Repair & Maintenance</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-faucet-drip"></i>
+                <h3>Water Purifiers</h3>
+                <p>Installation, Repair & Filter Replacement</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-box"></i>
+                <h3>Microwave Services</h3>
+                <p>Repair & Maintenance</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-washer"></i>
+                <h3>Washing Machine</h3>
+                <p>Installation, Repair & Maintenance</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-plug"></i>
+                <h3>Electrical Appliances</h3>
+                <p>Repair & Maintenance</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-tools"></i>
+                <h3>All Home Appliances</h3>
+                <p>Comprehensive Repair Services</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>Appliance Sales</h3>
+                <p>New & Refurbished Appliances</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="pricing" id="pricing">
+        <h2 class="section-title">Service Pricing</h2>
+        <div class="plans-grid">
+            <div class="plan-card">
+                <h3>AC Services</h3>
+                <div class="plan-price">$49<span>/service</span></div>
+                <ul class="plan-features">
+                    <li>Basic Diagnostic: $29</li>
+                    <li>Repair Service: $49+</li>
+                    <li>Installation: $99</li>
+                    <li>Gas Filling: $59</li>
+                </ul>
+                <a href="#contact" class="cta-button">Book Service</a>
+            </div>
+
+            <div class="plan-card recommended">
+                <h3>Refrigerator Services</h3>
+                <div class="plan-price">$45<span>/service</span></div>
+                <ul class="plan-features">
+                    <li>Diagnostic Fee: $25</li>
+                    <li>Basic Repair: $45+</li>
+                    <li>Installation: $79</li>
+                    <li>Parts Extra as Needed</li>
+                </ul>
+                <a href="#contact" class="cta-button">Book Service</a>
+            </div>
+
+            <div class="plan-card">
+                <h3>Washing Machine</h3>
+                <div class="plan-price">$55<span>/service</span></div>
+                <ul class="plan-features">
+                    <li>Diagnostic Check: $30</li>
+                    <li>Repair Service: $55+</li>
+                    <li>Installation: $89</li>
+                    <li>Maintenance: $39</li>
+                </ul>
+                <a href="#contact" class="cta-button">Book Service</a>
+            </div>
+
+            <div class="plan-card">
+                <h3>Microwave Services</h3>
+                <div class="plan-price">$39<span>/service</span></div>
+                <ul class="plan-features">
+                    <li>Diagnostic: $20</li>
+                    <li>Repair Service: $39+</li>
+                    <li>Component Testing: $25</li>
+                    <li>Parts Extra</li>
+                </ul>
+                <a href="#contact" class="cta-button">Book Service</a>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem; font-style: italic;">
+            *Prices are starting rates and may vary based on appliance model and complexity of service. 
+            Contact us for exact quotes on other appliances and services.
+        </p>
+    </section>
+    
+    <section class="ratings">
+        <h2 class="section-title">Customer Reviews</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="rating-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"Outstanding service! Their technicians arrived on time and fixed my AC in no time. Highly recommended!"</p>
+                <div class="client-info">
+                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Client" class="client-photo">
+                    <div>
+                        <h4>John Smith</h4>
+                        <p>Home Owner</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="testimonial-card">
+                <div class="rating-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"Professional and reliable. They've been maintaining our office appliances for 2 years now. Great service!"</p>
+                <div class="client-info">
+                    <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Client" class="client-photo">
+                    <div>
+                        <h4>Sarah Johnson</h4>
+                        <p>Business Manager</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="testimonial-card">
+                <div class="rating-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>"Quick response to emergency repair needs. Fair pricing and quality work. Will use them again!"</p>
+                <div class="client-info">
+                    <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Client" class="client-photo">
+                    <div>
+                        <h4>Michael Brown</h4>
+                        <p>Restaurant Owner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="contact" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <input type="text" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Prime Cooling Solution Appliance Services. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
