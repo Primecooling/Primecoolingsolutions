@@ -3,26 +3,20 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change this to your default branch if different (e.g., master)
+      - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      # Checkout the repository code
       - name: Checkout
         uses: actions/checkout@v4
 
-      # (Optional) Build step - only needed if you have a build process
-      # For a static HTML site like yours, you might skip this if no build is required
-
-      # Upload the files as an artifact
-      - name: Upload GitHub Pages artifact
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: github-pages  # Must match what deploy-pages expects
-          path: .  # Uploads all files in the root directory; adjust if your files are in a subfolder (e.g., 'dist')
+          name: github-pages
+          path: .  # Assumes index.html is in the root
 
-      # Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: actions/deploy-pages@v4
