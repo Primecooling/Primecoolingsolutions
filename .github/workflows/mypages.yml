@@ -5,6 +5,10 @@ on:
     branches:
       - main  # Change this to your default branch if it's different
 
+permissions:
+  id-token: write  # Grant permission to write ID tokens
+  contents: read   # Grant permission to read repository contents
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -15,5 +19,3 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
-        with:
-          publish_dir: ./  # This points to the root directory where your HTML and CSS files are located
